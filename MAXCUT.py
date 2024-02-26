@@ -1,4 +1,3 @@
-import numpy as np
 import dimod
 from dwave.system import LeapHybridSampler
 
@@ -47,7 +46,7 @@ vartype = dimod.BINARY
 # Initialise the model
 bqm = dimod.BinaryQuadraticModel(linear, quadratic, offset, vartype)
 
-# LeapHybridSampler is effective for a wide range of BQM problems (and probably overkill here)
+# LeapHybridSampler() is effective for a wide range of BQM problems (and probably overkill here)
 sampler = LeapHybridSampler()
 answer = sampler.sample(bqm)
 print(answer)
